@@ -283,7 +283,7 @@
 
             async loadUsers() {
                 try {
-                    const response = await fetch('/api/users');
+                    const response = await fetch('http://223.109.239.18:8080/api/users');
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
                     }
@@ -354,7 +354,7 @@
                             <button class="btn btn-primary" onclick="this.viewUserDetails('${user.name}')">
                                 查看详情
                             </button>
-                            <a href="/api/users/${encodeURIComponent(user.name)}/export" class="btn btn-success">
+                            <a href="http://223.109.239.18:8080/api/users/${encodeURIComponent(user.name)}/export" class="btn btn-success">
                                 导出CSV
                             </a>
                         </div>
@@ -364,7 +364,7 @@
 
             viewUserDetails(userName) {
                 // 跳转到用户详情页面或显示模态框
-                window.open(`/api/users/${encodeURIComponent(userName)}/annotations`, '_blank');
+                window.open(`http://223.109.239.18:8080/api/users/${encodeURIComponent(userName)}/annotations`, '_blank');
             }
 
             hideLoading() {

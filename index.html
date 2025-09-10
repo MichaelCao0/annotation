@@ -826,7 +826,7 @@
             async loadData() {
                 try {
                     // 从API加载数据
-                    const response = await fetch('/api/dataset/items?per_page=1000');
+                    const response = await fetch('http://223.109.239.18:8080/api/dataset/items?per_page=1000');
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
                     }
@@ -977,7 +977,7 @@
                 
                 // 保存到服务器（包含用户信息）
                 try {
-                    const response = await fetch('/api/annotations', {
+                    const response = await fetch('http://223.109.239.18:8080/api/annotations', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -1005,7 +1005,7 @@
             async loadSavedAnnotations() {
                 // 先从服务器加载
                 try {
-                    const response = await fetch('/api/annotations');
+                    const response = await fetch('http://223.109.239.18:8080/api/annotations');
                     if (response.ok) {
                         this.annotations = await response.json();
                         return;
@@ -1100,7 +1100,7 @@
 
             async saveUserInfoToServer() {
                 try {
-                    const response = await fetch('/api/user-info', {
+                    const response = await fetch('http://223.109.239.18:8080/api/user-info', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
